@@ -1,8 +1,8 @@
 ### My Personal Cheat Sheet:
 
-whenever i come across:
-- a trick or an intersting hack.
-- just Code samples ,script shell or an algorithme that i wrote or other developer wrote and i think that i will need it in the future.
+whenever I come across:
+- a trick or an interesting hack.
+- just code samples, script shell, or an algorithm that I wrote or another developer wrote and I think that I will need it in the future.
 - a new concept or knowledge in the software engineering
 
 ```
@@ -12,4 +12,3 @@ whenever i come across:
 the technologies and framework that i use :
 
 ```linux``` ```nodejs``` ```nestjs``` ```typescript``` ```javascript``` ```mongodb``` ```redis``` ```docker``` ```web```.
- 
