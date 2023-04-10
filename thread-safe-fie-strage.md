@@ -1,3 +1,5 @@
+## To be refined Later 
+
 what this mean "The promise APIs use the underlying Node.js threadpool to perform file system operations off the event loop thread. These operations are not synchronized or threadsafe. Care must be taken when performing multiple concurrent modifications on the same file or data corruption may occur."
 
 This means that the Promise APIs in Node.js for file system operations are performed using a separate thread pool in the background, which allows these operations to occur asynchronously and not block the event loop thread. However, because these operations are not synchronized or thread-safe, it is possible for data corruption to occur if multiple concurrent modifications are made to the same file. This means that developers need to be careful when using the Promise APIs for file system operations, especially when making multiple concurrent modifications, to ensure that their code is thread-safe and does not result in data corruption.
