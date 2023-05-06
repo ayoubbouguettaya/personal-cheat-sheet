@@ -1,5 +1,7 @@
 ### Samples
 
+Testing a service with the help of @golevelup for Mocking the service depencies.
+
 ```{ts}
 import { createMock, DeepMocked } from '@golevelup/ts-jest';
 import { HttpService } from '@nestjs/axios';

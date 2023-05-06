@@ -8,6 +8,51 @@ the hidden thread can't overload CPU intensive tasks beacuse it will block the m
 note that turning heavly intensive calculation into promise to make the code non blocking. as we leanrned about using non-blocking promise-based I/O methods like file opration wont  make use of Node.js hidden threads.
  
 => promises don’t make JavaScript code execute in parallel and cannot be used to make CPU-bound tasks non-blocking.
+
+_____________________________________________________________________________________
+
+
+node js does use thread ,when node js is single thread and when it's 
+
+loop is infinite loop ,it check if there is computing or code to execute ,whenever there is an operation that is async it will queued the callback in some Queue which are catogarized (timer , polling,....),and continue execute the Javascript.
+
+if you have a while true the nodejs will stuck for ever.
+
+this design need's threads . queries I/O ,some CPU intensive calculation like compression,crypto ,hashing
+file system API ,DNS queries resolving . which is expenssive .
+
+a LibUV is C++ library that nodejs used it for IO operation and calcul intensive 
+
+bomping the nombre of threads can be useless if you dont know the operation are executed.
+
+networking operation of the http module like send response use the main thread
+
+networking is async operation 
+
+Non Blocking IO 
+
+CPU based workloads
+IO based workloads
+
+
+______
+
+IO multiplexing in context of a server is communicating for many request
+
+it's easy to write in socket ,but listing is hard because of the blocking behaviour and waiting time
+
+solution:
+* non blocking reads with timeout
+* one thread per client ,the perfermenca decrease with scalability
+* IO monitoring  Calls
+
+    * POLL
+    * SELECT
+    * EPOLL API
+
+implemneted with file descriptors
+
+
 _____________________________________________________________________________________
 
 Event loop
@@ -61,3 +106,4 @@ In Node.js, the event loop is responsible for handling all the asynchronous I/O 
 By understanding the event loop, Node.js developers can write code that takes advantage of this asynchronous behavior and avoids blocking the event loop. This ensures that the application can handle multiple requests simultaneously without causing performance issues or crashes.
 
 Additionally, understanding the event loop is important for debugging and troubleshooting Node.js applications. By understanding how the event loop works, developers can identify and resolve issues related to blocking I/O operations or inefficient code that could be causing performance issues.
+
