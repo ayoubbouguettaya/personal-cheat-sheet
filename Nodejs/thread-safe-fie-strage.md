@@ -17,7 +17,7 @@ To ensure that operations are synchronized and thread-safe when using the callba
 For example, suppose we have two callbacks that need to modify the same file:
 
 javascript
-
+```ts
 function callback1(error) {
   if (error) {
     console.error('Error in callback1:', error);
@@ -51,7 +51,7 @@ fs.readFile('/path/to/file', function(error, data) {
     fs.writeFile('/path/to/file', data, callback2);
   }
 });
-
+```
 In this case, the two callbacks are modifying the same file, which can result in data corruption if the operations are not synchronized. To avoid this, we can use a lock or synchronization primitive to ensure that only one callback is modifying the file at a time.
 
 For example, we could use a mutex to ensure that only one callback can modify the file at a time:
